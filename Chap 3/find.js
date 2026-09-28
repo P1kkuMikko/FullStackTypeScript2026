@@ -4,6 +4,6 @@ const items = [
     { name: "jon", age: 40 }
 ];
 
-let jon = items.find(item => item.name === "jon");
+let jon = Boolean(items.find(item => item.name === "jon"));
 
 console.log(jon);

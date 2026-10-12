@@ -1,0 +1,12 @@
+section {
+  padding: 24px 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+section input {
+  margin: 4px;
+}
+
+section button {
+  margin: 8px;
+}

@@ -1,6 +1,8 @@
 import { useActionState } from "react";
 import "./App.css";
 import { useProfile } from "./store/profile/ProfileHooks";
+import ThemeProvider from "./ThemeContext";
+import { ThemeDisplay } from "./ThemeDisplay";
 
 type Login = {
   email: string;
@@ -35,23 +37,29 @@ function App() {
   );
 
   return (
-    <>
-      <form action={action}>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input id="email" name="email" />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input type="password" id="password" name="password" />
-        </div>
-        <button type="submit" disabled={isPending}>
-          submit
-        </button>
-      </form>
-      <br />
-      {profile && JSON.stringify(profile) }
-    </>
+    // <>
+    //   <form action={action}>
+    //     <div>
+    //       <label htmlFor="email">Email:</label>
+    //       <input id="email" name="email" />
+    //     </div>
+    //     <div>
+    //       <label htmlFor="password">Password:</label>
+    //       <input type="password" id="password" name="password" />
+    //     </div>
+    //     <button type="submit" disabled={isPending}>
+    //       submit
+    //     </button>
+    //   </form>
+    //   <br />
+    //   {profile && JSON.stringify(profile) }
+    // </>
+    // 
+
+        <ThemeProvider>
+            <ThemeDisplay />
+        </ThemeProvider>
+
   );
 }
 

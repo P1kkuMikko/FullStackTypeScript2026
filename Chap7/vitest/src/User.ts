@@ -3,7 +3,7 @@ type User = {
   userName: string;
   fullName: string;
 };
-export let allUsers: User[] = [];
+export const allUsers: User[] = [];
 
 export function newUser(
   id: number,
@@ -24,6 +24,9 @@ export function getUser(id: number) {
 }
 
 export function getLatestId() {
+  if (allUsers.length === 0) {
+    return 1;
+  }
   return Math.max(...allUsers.map((usr) => usr.id)) + 1;
 }
 

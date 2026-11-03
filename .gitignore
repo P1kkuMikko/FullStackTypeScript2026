@@ -215,3 +215,11 @@ env/
 .serverless/
 .vercel/
 .netlify/
+
+.agents/
+.claude/
+.windsurf/
+skills-lock.json
+
+# Books and PDF documents
+*.pdf

@@ -144,6 +144,7 @@ dist
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 .vs
+.vscode
 # pnpm
 .pnpm-store
 
@@ -223,3 +224,4 @@ skills-lock.json
 
 # Books and PDF documents
 *.pdf
+

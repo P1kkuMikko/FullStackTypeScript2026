@@ -26,7 +26,7 @@ export const authApi = {
 export const postsApi = {
   getAll: () => apiClient<PostList>('/v1/posts'),
 
-  getById: (id: string) => apiClient<Post>(`/v1/posts/${id}`),
+  getById: (id: string | number) => apiClient<Post>(`/v1/posts/${id}`),
 
   create: (data: { title: string; content: string; published?: boolean }) =>
     apiClient<Post>('/v1/posts', {
@@ -34,14 +34,16 @@ export const postsApi = {
       body: { published: true, ...data },
     }),
 
-  update: (id: string, data: { title?: string; content?: string }) =>
+  update: (id: string | number, data: { title?: string; content?: string }) =>
     apiClient<Post>(`/v1/posts/${id}`, { method: 'PUT', body: data }),
 
-  delete: (id: string) =>
+  delete: (id: string | number) =>
     apiClient<void>(`/v1/posts/${id}`, { method: 'DELETE' }),
 };
 
 export const usersApi = {
   getProfile: () => apiClient<User>('/v1/users/me'),
   getAll: () => apiClient<User[]>('/v1/users'),
+  delete: (id: string | number) =>
+    apiClient<void>(`/v1/users/${id}`, { method: 'DELETE' }),
 };

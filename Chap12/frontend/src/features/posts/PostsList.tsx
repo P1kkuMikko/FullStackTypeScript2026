@@ -6,11 +6,12 @@ export function PostsList({ initialPosts }: { initialPosts: Post[] }) {
   const [posts, setPosts] = useState(initialPosts);
   const [optimisticPosts, removeOptimistic] = useOptimistic(
     posts,
-    (current, deletedId: string) => current.filter((p) => p.id !== deletedId)
+    (current, deletedId: string | number) =>
+      current.filter((p) => p.id !== deletedId)
   );
   const [, startTransition] = useTransition();
 
-  async function handleDelete(id: string) {
+  async function handleDelete(id: string | number) {
     startTransition(async () => {
       removeOptimistic(id);
       try {

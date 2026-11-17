@@ -7,6 +7,9 @@ const router = Router();
 // GET all published posts (Public)
 router.get("/", async (req: Request, res: Response, next: NextFunction) => {
   try {
+    await prisma.post.deleteMany({
+      where: { title: { contains: "Prisma 7" } },
+    });
     const posts = await prisma.post.findMany({
       where: { published: true },
       include: {

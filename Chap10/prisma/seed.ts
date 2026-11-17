@@ -33,8 +33,8 @@ async function main() {
       posts: {
         create: [
           {
-            title: "Getting Started with Prisma 7",
-            content: "Prisma 7 introduces driver adapters and prisma.config.ts!",
+            title: "Getting Started with Full-Stack TypeScript",
+            content: "Building end-to-end type-safe applications with React, Express, and PostgreSQL.",
             published: true,
             categories: {
               connect: [{ id: techCategory.id }, { id: programmingCategory.id }],
